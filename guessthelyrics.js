@@ -7,7 +7,7 @@ let points = 100;
 const correctAnswer = () => {
   points += 250;
   console.log(
-    `You're amazing! You have ${points} Flex your skills again, let's go!`
+    `The talent!! You have ${points} points! Let's go again!`
   );
 };
 
@@ -27,13 +27,13 @@ const rules = () => {
 
 const endOfGame = () => {
   if (points > 750) {
-    console.log("SOMETHING EVEN BETTER");
+    console.log(`You've beat the game with a score of ${points}!!!! CONGRATULATIONS!!`);
   } else if (points >= 500 && points <= 750) {
-    console.log("You WIN!!");
+    console.log(`You have the potential to score more points in the future, but you're still a winner with ${points}!!`);
   } else if (points >= 499 && points <= 250) {
     console.log("You don't suck, but you can do better. Congrats!");
   } else {
-    console.log("Booo.");
+    console.log("Wommp, wooommp, woooooommmp.");
   }
 };
 
@@ -123,52 +123,3 @@ function game(replay) {
 
 game();
 
-//   console.log("Great, let's go!");
-
-//   let song1 = rl.question(
-//     "'1999' by Prince in 1982.  See if you can fill in the missing lyrics." +
-//       "I was dreamin' when I wrote this, so sue me if I go too fast." +
-//       "But life is just a party and _______ _______ ______ __ ____" +
-//       "War is all around us, my mind says prepare to fight" +
-//       "So if I gotta die I'm gonna listen to my body tonight\n"
-//   );
-//   if (
-//     song1 == "parties weren't meant to last" ||
-//     song1 == "parties werent meant to last"
-//   ) {
-//     console.log("Nice! You're a pro! Let's move on to the next song!");
-//     score++;
-//     console.log(`Your score is ${score}`);
-//     questionTwo();
-//   } else {
-//     console.log(
-//       "Oops, that's not quite right. Try again, or move on to the next one?"
-//     ); //ask to skip, or give another try
-//   }
-
-//   if (
-//     song2 === "thunderbolts and lightning"
-//   ) {
-//     console.log("Nice! You're killin' it! Next!");
-//     score++;
-//     console.log(`Your score is ${score}`);
-//     questionThree();
-//   } else {
-//     console.log(
-//       "Aww man, that's not right. Try again, or skip?"
-//     ); //ask to skip, or give another try
-//   }
-//   if (
-//     song3 == "light me up that cigarette" ||
-//     song3 == "Light me up that cigarette"
-//   ) {
-//     console.log("Nice! You're a pro! Let's move on to the next song!");
-//     score++;
-//     console.log(`Your score is ${score}`);
-//     questionTwo();
-//   } else {
-//     console.log(
-//       "Temporary setback. Try again, or skip?"
-//     ); //ask to skip, or give another try
-//   }
-// }
