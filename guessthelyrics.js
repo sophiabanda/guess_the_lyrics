@@ -1,12 +1,12 @@
 const rl = require("readline-sync");
-const { _1999, What_I_Got, Bohemian } = require("./constant");
+const { _1999, What_I_Got, Bohemian, I_Get_Around, Juicy } = require("./constant");
 const { randomizeQuestions, parseString } = require("./utils");
 
 let points = 100;
 
 const correctAnswer = () => {
   points += 250;
-  console.log(
+  console.log("\x1b[32m%s\x1b[0m",
     `The talent!! You have ${points} points! Let's go again!`
   );
 };
@@ -19,10 +19,11 @@ const incorrectAnswer = () => {
 };
 
 const rules = () => {
-  console.log(`You're going to get three chances to get your answer right.\n
+  console.log('\x1b[36m%s\x1b[0m',
+  `You're going to get three chances to get your answer right.\n
    For each correct answer, you will be awarded 250 points. For every wrong\n
    asnwer, you'll lose 150 points. If you don't know the song and want to skip\n 
-   you may after your first attempt for the price of 50 points. You begin the game with 100 points. Let's go!`);
+   you may after your first attempt for the price of 50 points. You begin the game with 100 points. Let's go!\n`);
 };
 
 const endOfGame = () => {
@@ -55,32 +56,40 @@ const generateQuestions = () => {
   const questions = [
     {
       introQuestion: () =>
-      console.log(
-        "The popular song 'I Get Around' by Tupac Shakur was released in 1993. Can you guess these missing lyrics?"
+      console.log("\x1b[35m%s\x1b[0m",
+      `A song everyone sings when it comes on, 'Juicy' by Notorious BIG was released in 1994.\n
+       Let's see if we can trick you with this one.\n`),
+       lyrics: () => rl.question(Juicy),
+       solution: "I let my tape rock 'til my tape pop."
+    },
+    {
+      introQuestion: () =>
+      console.log("\x1b[35m%s\x1b[0m",
+        "The popular song 'I Get Around' by Tupac Shakur was released in 1993. Can you guess these missing lyrics?\n"
       ),
       lyrics: () => rl.question(I_Get_Around),
       solution: "I don't want it if it's that easy."
     },
     {
       introQuestion: () =>
-        console.log(
-          "'1999' by Prince was released in 1982.  See if you can fill in these missing lyrics."
+        console.log("\x1b[35m%s\x1b[0m",
+          "'1999' by Prince was released in 1982.  See if you can fill in these missing lyrics.\n"
         ),
       lyrics: () => rl.question(_1999),
       solution: "parties weren't meant to last"
     },
     {
       introQuestion: () =>
-        console.log(
-          "'Bohemian Rhapsody' by Queen was released in 1975. See if you can fill in these popular missing lyircs."
+        console.log("\x1b[35m%s\x1b[0m",
+          "'Bohemian Rhapsody' by Queen was released in 1975. See if you can fill in these popular missing lyircs.\n"
         ),
       lyrics: () => rl.question(Bohemian),
       solution: "thunderbolt and lightning"
     },
     {
       introQuestion: () =>
-        console.log(
-          "'What I Got' by Sublime was released in 1996. Fill in these blanks for another 250 points!"
+        console.log("\x1b[35m%s\x1b[0m",
+          "'What I Got' by Sublime was released in 1996. Fill in these blanks for another 250 points!\n"
         ),
       lyrics: () => rl.question(What_I_Got),
       solution: "light me up that cigarette"

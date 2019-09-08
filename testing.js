@@ -1,5 +1,8 @@
-console.log("\x1b[36m%s\x1b[0m", "I am cyan"); //cyan
-console.log("\x1b[33m%s\x1b[0m", "stringToMakeYellow"); //yellow
+console.log("\x1b[4m%s\x1b[0m", "Underscore")
+console.log("\x1b[35m%s\x1b[0m", "Magenta")
+console.log('\x1b[36m%s\x1b[0m', 'I am cyan');  //cyan
+console.log('\x1b[33m%s\x1b[0m', 'stringToMakeYellow');  //yellow
+console.log("\x1b[32m%s\x1b[0m", 'VERDE')
 
 Reset = "\x1b[0m";
 Bright = "\x1b[1m";

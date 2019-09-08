@@ -1,9 +1,11 @@
-const _1999 = `I was dreamin' when I wrote this, so sue me if I go too fast\n
+const _1999 = `
+I was dreamin' when I wrote this, so sue me if I go too fast\n
 But life is just a party and _______ _____ __ ____\n
 War is all around us, my mind says prepare to fight\n
 So if I gotta die I'm gonna listen to my body tonight\n`
 
-const Bohemian = `I see a little silhouetto of a man\n
+const Bohemian = `
+I see a little silhouetto of a man\n
 Scaramouch, Scaramouch will you do the Fandango\n
 __________ ___ __________ very very frightening me\n
 Gallileo, Gallileo, Gallileo, Gallileo, Gallileo, figaro, magnifico\n`
