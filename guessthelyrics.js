@@ -22,7 +22,7 @@ const rules = () => {
   console.log(`You're going to get three chances to get your answer right.\n
    For each correct answer, you will be awarded 250 points. For every wrong\n
    asnwer, you'll lose 150 points. If you don't know the song and want to skip\n 
-   you may after your first attempt for the price of 50 points. `);
+   you may after your first attempt for the price of 50 points. You begin the game with 100 points. Let's go!`);
 };
 
 const endOfGame = () => {
@@ -53,6 +53,14 @@ const gameOver = () => {
 
 const generateQuestions = () => {
   const questions = [
+    {
+      introQuestion: () =>
+      console.log(
+        "The popular song 'I Get Around' by Tupac Shakur was released in 1993. Can you guess these missing lyrics?"
+      ),
+      lyrics: () => rl.question(I_Get_Around),
+      solution: "I don't want it if it's that easy."
+    },
     {
       introQuestion: () =>
         console.log(
@@ -114,6 +122,9 @@ function game(replay) {
         const input = question.lyrics();
         const isRight = parseString(input) === parseString(question.solution);
         isRight ? correctAnswer() : incorrectAnswer();
+      }
+      if (tryAgain === "2") {
+        points -= 50
       }
     }
     rl.question("Press enter to continue");
