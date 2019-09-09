@@ -14,24 +14,25 @@ const correctAnswer = () => {
 const incorrectAnswer = () => {
   points -= 250;
   console.log("Nope, didn't get it. You're losing some points. Let's move on.");
-  console.log(`Your points not stand at ${points}`);
+  console.log(`Your points now stand at ${points}`);
   if (points < 0) console.log("Yikes, you're not great at this.");
 };
 
 const rules = () => {
   console.log('\x1b[36m%s\x1b[0m',
-  `You're going to get three chances to get your answer right.\n
-   For each correct answer, you will be awarded 250 points. For every wrong\n
-   asnwer, you'll lose 150 points. If you don't know the song and want to skip\n 
-   you may after your first attempt for the price of 50 points. You begin the game with 100 points. Let's go!\n`);
+  `   Fabulous, here are the rules:\n
+   You're going to get two chances to get your answer right. For each correct answer, you will be awarded 250 points.\n
+   For every wrong answer, you'll lose 150 points. If you don't know the song and want to skip,\n
+   you may after your first attempt for the price of 50 points. Don't worry, capitalization and punctuation do not matter.\n
+   You are being awarded 100 points to begin. Let's go!\n`);  
 };
 
 const endOfGame = () => {
-  if (points > 750) {
-    console.log(`You've beat the game with a score of ${points}!!!! CONGRATULATIONS!!`);
-  } else if (points >= 500 && points <= 750) {
+  if (points >= 1350) {
+    console.log(`You've beat the game with a top score of ${points}!!!! CONGRATULATIONS!!`);
+  } else if (points >= 750 && points <= 1349) {
     console.log(`You have the potential to score more points in the future, but you're still a winner with ${points}!!`);
-  } else if (points >= 499 && points <= 250) {
+  } else if (points >= 749 && points <= 450) {
     console.log("You don't suck, but you can do better. Congrats!");
   } else {
     console.log("Wommp, wooommp, woooooommmp.");
@@ -89,7 +90,7 @@ const generateQuestions = () => {
     {
       introQuestion: () =>
         console.log("\x1b[35m%s\x1b[0m",
-          "'What I Got' by Sublime was released in 1996. Fill in these blanks for another 250 points!\n"
+          "'What I Got' by Sublime was released in 1996. Fill in these blanks 250 points!\n"
         ),
       lyrics: () => rl.question(What_I_Got),
       solution: "light me up that cigarette"
@@ -136,7 +137,7 @@ function game(replay) {
         points -= 50
       }
     }
-    rl.question("Press enter to continue");
+    rl.question("Press enter to continue\n");
   });
   if (points > 0) endOfGame();
 }
