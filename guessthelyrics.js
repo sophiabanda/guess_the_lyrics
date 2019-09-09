@@ -29,13 +29,13 @@ const rules = () => {
 
 const endOfGame = () => {
   if (points >= 1350) {
-    console.log(`You've beat the game with a top score of ${points}!!!! CONGRATULATIONS!!`);
+    console.log(`You've beat the game with a top score of ${points}!!!! ${String.fromCodePoint(0x1F4B0, 0x1F4B0, 0x1F4B0, 0x1F4B0)}  CONGRATULATIONS!!`);
   } else if (points >= 750 && points <= 1349) {
-    console.log(`You have the potential to score more points in the future, but you're still a winner with ${points}!!`);
+    console.log(`You have the potential to score more points in the future, but you're still a winner with ${points}!! ${String.fromCodePoint(0x1F4B8, 0x1F4B8, 0x1F4B8)}`);
   } else if (points >= 749 && points <= 450) {
-    console.log("You don't suck, but you can do better. Congrats!");
+    console.log(`You don't suck, but you can do better. Congrats! ${String.fromCodePoint(0x1F643)}`);
   } else {
-    console.log("Wommp, wooommp, woooooommmp.");
+    console.log(`Wommp, wooommp, woooooommmp. ${String.fromCodePoint(0x1F494, 0x1F494, 0x1F494)}`);
   }
 };
 
